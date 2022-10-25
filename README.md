@@ -6,6 +6,10 @@
 
 ### docker build . => gera a imagem
 
+### docker run -d -p 8000:8000 --name myApp <id_da_imagem>
+
+### >docker exec -it 744487d64b38 bash  => Acessa o container que está em execução
+
 ### docker build -t <NOME_PARA_A_ IMAGEM> .   => NOME PARA A IMAGEM NA HORA DO BUIL (NA HORA DA CRIAÇÃO)
 
 ### docker images => lista as imagens
@@ -14,8 +18,15 @@
 
 ### docker run --rm <container>  => Remove ao parar o container
 
-### 
 
+docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-
+docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
+### >docker cp app:/app/app.js ./bkp/   => Copia arquivo app.js de dentro do container configurado no Dokerfile como WORKDIR /app, para a pasta bkp da raiz do projeto.
+
+### \projetos>docker cp ./bkp/teste.txt app:/app/    => copia o arquivo teste.txt da pasta bkp dentro de projeto  para a pasta do app na imagem rodando.
+
+### >docker exec -it app bash Acessa o prompt da imagem rodando
+### ls lista o arquivo dentro da imagem: Dockerfile  app.js  node_modules  package-lock.json  package.json  teste.txt 
 
 ### docker stop <id_ou_nome_do_container>
 
@@ -42,7 +53,6 @@
 
 ### 
 
-### projetos>docker run -d -p 8000:8000 --name myApp <id_da_imagem>
 
 ### docker ps
 CONTAINER ID   IMAGE          COMMAND                  CREATED              STATUS              PORTS                              NAMES
