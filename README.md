@@ -1,5 +1,7 @@
 ### COMANDOS DO DOCKER ##########################################################################
 
+
+
 ### docker --help
 
 ### docker run --help
@@ -18,6 +20,17 @@
 
 ### docker run --rm <container>  => Remove ao parar o container
 
+### docker login        CASO ESTEJA LOGADO NO DOCKER DESKTOP DISPENSA CREDENCIAIS
+                    username: ***********@hotmail.com
+                    password: *******
+
+### CRIA O REPOSITÓRIO E CRIA O BUILd COM O MESMO NOME DO REPOSITÓRIO docker build -t matheusbattisti/nodeteste .
+
+### docker build -t albertogomesdasilva/nodeteste . e depois: docker push albertogomesdasilva/nodeteste  => envia para o docker hub
+
+### docker pull albertogomesdasilva/nodeteste => baixa a imagem do docker hub
+
+### docker push matheusbattisti/nodeteste
 
 docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-
 docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
@@ -34,8 +47,6 @@ docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
 
 ### docker system prune => Remove Imagens, containers e redes que não usamos
 
-### 
-
 
 ### docker pull <nome_da_imagem> => Baixa a imagem do docker hub
 
@@ -50,8 +61,6 @@ docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
 ### docker tag <id_da_iamgem> <nome_da_imagem>:<tag_para_a_imagem> => atribui uma tag para a imagem (TAG É UMA VERSÃO PARA A IMAGEM)
 
 ### docker pull <nome_da_imagem>:<tag>  => BAIXA A IMAGEM DAQUELA VERSÃO
-
-### 
 
 
 ### docker ps
@@ -234,3 +243,17 @@ Removedor:
 docker rm -v container_name
 Conclusão
 Este guia cobre alguns dos comandos comuns usados ​​para remover imagens, contêineres e volumes com o Docker. Há muitas outras tantas e bandeiras que podem ser usadas com cada um deles. Para um guia abrangente sobre o que está disponível, consulte a documentação do Docker para docker system prune, docker rmi, docker rm, e docker volume rm. Se tarefas comuns de limpeza que você gostaria de ver no guia, por favor, pergunte ou faça sugestões nos comentários"# docker" 
+
+### ANALISE DE CONTAINERS - ANALISANDO
+docker top app
+UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
+root                5919                5899                0                   19:40               ?                   00:00:00            node app.js
+
+### INSPECIONANDO CONTAINER: docker inspect <nome_ou_id_do_container> => Verifica detalhadamente o processo do container
+
+### docker stats => Mostra o desempenho em tempo real dos container que estão rodando
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+0c2d26ef44cc   app       0.00%     12.96MiB / 3.706GiB   0.34%     32.3kB / 9.87kB   0B / 0B     7
+
+
+
