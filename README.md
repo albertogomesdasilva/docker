@@ -1,4 +1,59 @@
-### COMANDOS DO DOCKER
+### COMANDOS DO DOCKER ##########################################################################
+
+### docker --help
+
+### docker run --help
+
+### docker build . => gera a imagem
+
+### docker build -t <NOME_PARA_A_ IMAGEM> .   => NOME PARA A IMAGEM NA HORA DO BUIL (NA HORA DA CRIAÇÃO)
+
+### docker images => lista as imagens
+
+### docker ps -a  => Lista as imagens dispoiveis
+
+### docker run --rm <container>  => Remove ao parar o container
+
+### 
+
+
+### docker stop <id_ou_nome_do_container>
+
+### docker rmi <nome>:<tag> => Remove a imagem também
+
+### docker system prune => Remove Imagens, containers e redes que não usamos
+
+### 
+
+
+### docker pull <nome_da_imagem> => Baixa a imagem do docker hub
+
+### docker start -i <nome_do_container> => roda no modo iterativo uma imagem que ja´está no pc
+
+### docker rmi <nome_da_imagem_ou_id>  => Remove imagem
+
+### docker -it <nome_da_imagem> => Roda a imagem e libera o prompt de interação com a imagem. (MODO DETACHED)
+
+### docker tag <nome> <id_da_imagem>
+
+### docker tag <id_da_iamgem> <nome_da_imagem>:<tag_para_a_imagem> => atribui uma tag para a imagem (TAG É UMA VERSÃO PARA A IMAGEM)
+
+### docker pull <nome_da_imagem>:<tag>  => BAIXA A IMAGEM DAQUELA VERSÃO
+
+### 
+
+### projetos>docker run -d -p 8000:8000 --name myApp <id_da_imagem>
+
+### docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED              STATUS              PORTS                              NAMES
+7bb33d0e43a6   26ee7a516e9e   "docker-entrypoint.s…"   About a minute ago   Up About a minute   3000/tcp, 0.0.0.0:8000->8000/tcp   myApp
+
+###  docker system prune => Remove todos 
+
+###  docker system prune -a => Remove tudo sem exceção
+
+* >docker run -d -p 3000:3000 528392dd249e meu_app   -> RODA A NOVA IMAGEM CRIADA PASSANDO AS CONFIGURAÇÕES DE PORTA E NOME
+
 * docker run -d -p 80:80 --name nginx_app nginx -> Baixa e roda em segundo plano na porta 80 a imagem nginx e usa o nome nginx_app
 * docker start <nome_ou_id_da_imagem>   -> Roda uma imagem já baixada
 * docker stop <nome_da_image>   -> para a execução da imagem
@@ -17,14 +72,18 @@
 * docker stop $(docker ps -a -q)  => para todos os containers em execução
 * docker rm $(docker ps -a -q) => Exclui todos os containers parados
 * 
-* docker system prune => Remove todos 
-* docker system prune -a => Remove tudo sem exceção
-* 
+###  docker system prune => Remove todos 
+
+###  docker system prune -a => Remove tudo sem exceção
+
+
 * docker images purge => Limpa todas as imagens não marcadas
 
 * docker images -f dangling=true =>  Listar imagens sem uso
 
 * docker images purge => Remove imagens sem uso
+
+* docker build .   => "DOCKER BUIL PONTO" => GERAR A IMAGEM
 
 ### !-- GUIA DE COMANDOS DOCKER --
 Um Guia de Consulta Rápida do Docker
